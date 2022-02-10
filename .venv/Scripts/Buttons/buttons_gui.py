@@ -2,10 +2,8 @@ import tkinter as tk
 import os
 from tkinter.constants import RIGHT
 import webbrowser
-
+ 
 # Just a simple tkinter button gui that lets me run various python files, launch templated notepads, or scrape my clipboard for fields and copy them to my clipboard.
-
-
 def abort(self):
     self.quit()
     
