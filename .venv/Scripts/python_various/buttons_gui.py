@@ -3,11 +3,11 @@ import os
 from tkinter.constants import RIGHT
 import webbrowser
 
+# Just a simple tkinter button gui that lets me run various python files, launch templated notepads, or scrape my clipboard for fields and copy them to my clipboard.
+
+
 def abort(self):
     self.quit()
-
-def run_python_file():
-    os.startfile('C:\\Users\\some\\file\\path\\python.py')
     
 def run_cb_scrape():
     os.system('C:\\Users\\Timothy\\python_folder1\\.venv\\Scripts\\python_various\\cb_scraper.py')
@@ -38,9 +38,6 @@ class buttons(tk.Tk):
         self.button1 = tk.Button(self.btn_frame, text='Abort & Close',bd=8,background='red',font='bold',width=18,command=lambda: abort(self))
         self.button1.pack()
 
-        self.button2 = tk.Button(self.btn_frame, text='Run Python File',bd=8,background='aqua',width=18,command=lambda: run_python_file(),font='bold')
-        self.button2.pack()
-
         self.button3 = tk.Button(self.btn_frame, text='Scrape Clipboard',bd=8,background='gray',width=18,command=lambda: run_cb_scrape(),font='bold')
         self.button3.pack()
 
@@ -51,7 +48,7 @@ class buttons(tk.Tk):
         self.button5.pack()
 
         self.button6 = tk.Button(self.btn_frame, text='Python Notes',bd=8,background='gold',foreground = 'black',width=18,command=lambda: open_python_notes(),font='bold')
-        self.button6.pack()        
+        self.button6.pack()     
 
 
 app = buttons()
