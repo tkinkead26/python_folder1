@@ -19,8 +19,8 @@ def launch_webpage():
 def open_python_notes():
     os.startfile('C:\\Users\\Timothy\\Desktop\\Python Notes.txt')
 
-def run_http_request():
-    os.system('C:\\Users\\some\\file\\path\\example.py')
+def wframe_item_orders():
+    os.system('C:\\Users\\Timothy\\python_folder1\\.venv\\Scripts\\python_various\\market_request.py')
 
 class buttons(tk.Tk):
     def __init__(self):
@@ -44,12 +44,11 @@ class buttons(tk.Tk):
         self.button4 = tk.Button(self.btn_frame, text='Warframe Market',bd=8,background='maroon',foreground = 'white',width=18,command=lambda: launch_webpage(),font='bold')
         self.button4.pack()
 
-        self.button5 = tk.Button(self.btn_frame, text='HTTP Request',bd=8,background='dodgerblue',foreground = 'black',width=18,command=lambda: run_http_request(),font='bold')
+        self.button5 = tk.Button(self.btn_frame, text='HTTP Request',bd=8,background='dodgerblue',foreground = 'black',width=18,command=lambda: wframe_item_orders(),font='bold')
         self.button5.pack()
 
         self.button6 = tk.Button(self.btn_frame, text='Python Notes',bd=8,background='gold',foreground = 'black',width=18,command=lambda: open_python_notes(),font='bold')
         self.button6.pack()     
-
 
 app = buttons()
 app.mainloop()
