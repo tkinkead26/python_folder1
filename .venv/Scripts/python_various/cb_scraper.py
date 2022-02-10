@@ -13,17 +13,18 @@ class scrapers:
             field_value1_list = re.findall(r'(<=field_name1: ).*(?=\n)',cb_data)
             #Using findall when searching for a field that I only expect find one result for allows me to use index 0 for my try block and return N/A if it doesn't find a value
             supported_fields["field_name1"] = str(field_value1_list[0])
-        except:
+        except IndexError:
             supported_fields["field_name1"] = 'N/A'
         try:
             field_value2_list = re.findall(r'(<=field_name2: ).*(?=\n)',cb_data)
+            # naming the supported_fields key field_name2 and defining the value as str(field_value2_list[0])
             supported_fields["field_name2"] = str(field_value2_list[0])
-        except:
+        except IndexError:
             supported_fields["field_name2"] = 'N/A'
         try:
             field_value3_list = re.findall(r'(<=field_name3: ).*(?=\n)',cb_data)
             supported_fields["field_name3"] = str(field_value3_list[0])
-        except:
+        except IndexError:
             supported_fields["field_name3"] = 'N/A'
         # Repeat the try/excepts for as many fields as you need to return. 
         # return a dictionary of key value pairs
@@ -43,3 +44,9 @@ class scrapers:
             supported_field_groups.append(supported_fields)
         #return a list of dictionaries 
         return supported_field_groups
+
+    #Calling the field_groups function and the nested function field_groups
+    supported_field_groups = field_groups(cb_data,field_grabs)
+    
+    for group in supported_field_groups:
+        print(group)
